@@ -1,3 +1,10 @@
+
+let a1: number[] = [1, 2, 3];
+
+let b1: Array<string> = ["a", "b", "c"]; // 2 ways of declare array type
+
+let c1: (string | number)[] = ["a", "b", 1, 2]; // Array<string | number>
+
 type Airplane = {
     flightNumber: string;
     airplaneModel: string;
@@ -11,15 +18,31 @@ type Airplane = {
     };
 };
 
-const airPlane: Airplane = {
-    flightNumber: "SG102",
-    airplaneModel: "A380",
-    dateOfDeparture: "01/12/2022",
-    timeOfDeparture: "23:10",
-    from: "JFK",
-    to: "DCA",
-    seats: {
-        "10A": "Max",
-        "10B": "John"
+type Airplanes = Airplane[];
+
+const airplanes: Airplanes = [
+    {
+        flightNumber: "SG102",
+        airplaneModel: "string",
+        dateOfDeparture: "string",
+        timeOfDeparture: "string",
+        from: "string",
+        to: "string",
+        seats: {
+            //orderProperty: number; // index signatures can coexist with other value but it must to same type
+            "10A": "Trung"
+        },
+    },
+    {
+        flightNumber: "SG103",
+        airplaneModel: "string",
+        dateOfDeparture: "string",
+        timeOfDeparture: "string",
+        from: "string",
+        to: "string",
+        seats: {
+            //orderProperty: number; // index signatures can coexist with other value but it must to same type
+            "10A": "Trung"
+        },
     }
-};
+];

@@ -1,13 +1,20 @@
-type stringOrNumber = number | string;
+type Cat = {
+    name: string;
+    purrs: boolean;
+    color: string;
+};
 
-function addNumberOrString(a: stringOrNumber, b: stringOrNumber) {
-    if (typeof a === "number" && typeof b === "number") {
-        return a + b;
-    } else {
-        return a.toString() + b.toString();
-    }
-}
+type Dog = {
+    name: string;
+    barks: boolean;
+    color: string;
+};
 
-console.log(addNumberOrString(5, 10));
-console.log(addNumberOrString("Trung", 10));
-// console.log(addNumberOrString(5, null));
+type HybridAnimal = Dog & Cat;
+
+const hybridAnimal: HybridAnimal = {
+    name: "Max",
+    color: "White",
+    barks: true,
+    purrs: false
+};

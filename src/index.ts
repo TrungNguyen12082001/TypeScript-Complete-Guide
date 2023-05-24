@@ -1,10 +1,16 @@
-let number: readonly number[] = [1, 2, 3];
+let loggedInUsername: string;
 
-// number.push(1) throw error
+const users = [
+    { name: "Obby", age: 12 },
+    { name: "Hina", age: 32 },
+];
 
-type readonlyPerson = readonly [string, string, number];
+const loggedInUser = users.find((user) => user.name === loggedInUsername);
 
-const person: readonlyPerson = ["John", "Smith", 32];
+// console.log(loggedInUser.age);
 
-type a = Readonly<string[]>;
-type c = Readonly<[string, string, number]>;
+let saveButton: HTMLElement | null = document.getElementById("save");
+
+if (saveButton !== null) {
+    // do something
+}

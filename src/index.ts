@@ -1,11 +1,23 @@
-const addNumber = () => {
-    console.log(2 + 4);
+// import { Roles } from "./roles";
+
+enum Roles {
+    admin = "admin",
+    author = "author",
+    editor = "editor"
+}
+
+type Person = {
+    name: string;
+    email: string;
+    password: string;
+    role: Roles;
 };
 
-addNumber();
-
-const throwNewError = () => {
-    throw new Error("Your program terminated because of error");
+const person: Person = {
+    name: "John",
+    email: "john@email.com",
+    password: "password",
+    role: Roles.editor
 };
 
-throwNewError();
+console.log(person);

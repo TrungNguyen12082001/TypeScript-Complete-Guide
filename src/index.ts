@@ -1,16 +1,10 @@
-// firstname, lastname, age
+let number: readonly number[] = [1, 2, 3];
 
-let person: [string, string, number?];
+// number.push(1) throw error
 
-person = ["John", "Doe"];
+type readonlyPerson = readonly [string, string, number];
 
-// [
-// NumberOfStudents: number,
-// passing: boolean,
-// 'John', 'Stella'
-//]
+const person: readonlyPerson = ["John", "Smith", 32];
 
-type listOfStudents = [number, boolean, ...string[]]; // Tuples
-
-const passingStudents: listOfStudents = [3, true, "John", "Stella", "Mark"];
-const failingStudents: listOfStudents = [1, false, "Scott"];
+type a = Readonly<string[]>;
+type c = Readonly<[string, string, number]>;

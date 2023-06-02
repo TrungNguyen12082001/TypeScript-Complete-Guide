@@ -3,18 +3,22 @@ enum AgeUnit {
     months = "months"
 }
 
+type greetingFunction = (greeting: string) => string;
+
 type Person = {
     name: string;
     age: number;
     ageUnit: AgeUnit;
     country: string;
+    greet: greetingFunction;
 };
 
 const person: Person = {
     name: "Scott",
     age: 30.5,
     ageUnit: AgeUnit.years,
-    country: "USA"
+    country: "USA",
+    greet: (greeting) => { return `${greeting} ${person.name}`; }
 };
 
 function convertAgeToMonths(person: Person): Person {
@@ -23,5 +27,5 @@ function convertAgeToMonths(person: Person): Person {
     return person;
 }
 
-console.log(convertAgeToMonths(person));
+console.log(person.greet("Good Morning"));
 

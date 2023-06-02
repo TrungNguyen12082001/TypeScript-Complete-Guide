@@ -1,6 +1,13 @@
-type Filter = {
-    <T>(array: T[], predicate: (item: T) => boolean): T[];
-};
+// type Filter = {
+//     <T>(array: T[], predicate: (item: T) => boolean): T[];
+// };
+
+// type Filter<T> = {
+//     (array: T[], predicate: (item: T) => boolean): T[];
+// };
+
+type Filter = <T>(array: T[], predicate: (item: T) => boolean) => T[];
+
 
 const filter: Filter = (array, predicate) => {
     let result = [];

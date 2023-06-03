@@ -1,23 +1,15 @@
-const map = <T, U>(array: T[], func: (item: T) => U) => {
-    // Check if the array is empty
-    if (array.length === 0) {
-        return array;
+class Person {
+    name = "John";
+    email = "john@email.com";
+
+    greet() {
+        return `Hello John`;
     }
-    // Create a new array to collect values
-    let result = [];
+}
 
-    // Loop through each item and call the func
-    for (let i = 0; i < array.length; i++) {
-        result[i] = func(array[i]);
-    }
+const person = new Person();
+const person2 = new Person();
 
-    // Return new array
-    return result;
-};
-
-let numbers = [4, 5, 6, 7, 8];
-
-// @ts-ignore
-const converted = map(numbers, (num) => num.toString());
-
-console.log(converted);
+console.log(person);
+console.log(person2);
+console.log(person.greet());

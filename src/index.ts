@@ -2,14 +2,15 @@ class Person {
     name = "John";
     email = "john@email.com";
 
+    constructor(name: string, email: string) {
+        console.log("name: " + name);
+        console.log("email: " + email);
+    }
+
     greet() {
         return `Hello John`;
     }
 }
 
-const person = new Person();
-const person2 = new Person();
-
-console.log(person);
-console.log(person2);
-console.log(person.greet());
+const person = new Person("John", "john@email.com");
+const person2 = new Person("Mark", "mark@email.com");

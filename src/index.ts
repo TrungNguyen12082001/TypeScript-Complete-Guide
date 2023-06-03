@@ -1,5 +1,5 @@
 class Person {
-    private name: string;
+    protected name: string;
     public age: number;
 
     constructor(name: string, age: number) {
@@ -12,6 +12,15 @@ class Person {
     }
 }
 
+class Admin extends Person {
+    public returnName() {
+        return this.name;
+    }
+}
+
+const admin: Admin = new Admin("Mark", 42);
+
 let person: Person = new Person("Trung", 22);
 
-console.log(person.getName());
+console.log(person);
+console.log(admin.returnName());

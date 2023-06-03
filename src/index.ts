@@ -1,11 +1,5 @@
 class Person {
-    protected name: string;
-    public age: number;
-
-    constructor(name: string, age: number) {
-        this.name = name;
-        this.age = age;
-    }
+    constructor(protected name: string, public age: number) { }
 
     public getName() {
         return this.name;

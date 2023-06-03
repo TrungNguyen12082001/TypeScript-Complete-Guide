@@ -1,22 +1,21 @@
-class Person {
+class User {
     name: string;
     email: string;
+    age: number;
 
-    constructor(name: string, email: string) {
+    constructor(name: string, email: string, age: number) {
         this.name = name;
         this.email = email;
-    }
-
-    greet() {
-        return `Hello ${this.name}`;
+        this.age = age;
     }
 }
 
-const person = new Person("John", "john@email.com");
-const person2 = new Person("Mark", "mark@email.com");
+class AdminUser extends User {
+    isAdmin: boolean = true;
+}
 
-console.log(person);
-console.log(person2);
+const user: User = new User("John", "john@email.com", 30);
+const admin: AdminUser = new AdminUser("Mark", "mark@email.com", 40);
 
-console.log(person.greet());
-console.log(person2.greet());
+console.log(user);
+console.log(admin);

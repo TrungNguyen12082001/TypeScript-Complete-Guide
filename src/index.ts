@@ -25,3 +25,4 @@ const person: Person = new Person("John");
 person.age = 70;
 
 console.log(person.age);
+console.log(person.getName());

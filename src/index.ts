@@ -1,9 +1,12 @@
 class Person {
-    private _age: number | undefined;
-    constructor(protected name: string) { }
+    constructor(private _name: string, private _age: number) { }
 
-    public getName() {
-        return this.name;
+    public set name(name: string) {
+        this._name = name;
+    }
+
+    public get name() {
+        return this._name;
     }
 
     public set age(age: number) {
@@ -14,15 +17,12 @@ class Person {
     }
 
     public get age() {
-        if (this._age === undefined) {
-            throw new Error("The age has not been set as yet");
-        }
         return this._age;
     }
 }
 
-const person: Person = new Person("John");
-person.age = 70;
+const person: Person = new Person("John", 32);
+person.age = 700;
 
 console.log(person.age);
-console.log(person.getName());
+console.log(person.name);

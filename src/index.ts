@@ -1,10 +1,13 @@
-class Automobile {
-    public static color: string = "red";
+type Holidays = {
+    date: Date;
+    reason: string;
+}[];
 
-    public static calculateMileage(miles: number, liters: number) {
-        return miles / liters;
-    }
+abstract class Department {
+    protected abstract holidays: Holidays;
+    protected constructor(protected name: string) { }
 }
 
-console.log(Automobile.color);
-console.log(Automobile.calculateMileage(50, 10));
+class ItDepartment extends Department { }
+
+class AdminDepartment extends Department { }

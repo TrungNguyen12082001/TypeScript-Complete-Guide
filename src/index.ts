@@ -1,4 +1,4 @@
-enum AutomobileType {
+enum AutomobileTypes {
     car = "car",
     bus = "bus",
     van = "van",
@@ -28,7 +28,27 @@ interface Automobile<Type, Brand, Colors> {
     description: string;
 }
 
-// type --car
-// brand - is Ferrari
-// colors - ['black', 'red']
-// description - string
+const ferrari: Automobile<AutomobileTypes, AutomobileBrands, AutomobileColors> = {
+    type: AutomobileTypes.car,
+    brand: AutomobileBrands.ferrari,
+    colors: [AutomobileColors.black, AutomobileColors.red],
+    description: "This is a Ferrari"
+};
+
+const honda: Automobile<string, string, string> = {
+    type: "car",
+    brand: "Honda",
+    colors: ["silver", "black"],
+    description: "This is a Honda"
+};
+
+const toyota: Automobile<string, AutomobileBrands, number> = {
+    type: "car",
+    brand: AutomobileBrands.toyota,
+    colors: [232, 3231],
+    description: "This is a Toyota"
+};
+
+console.log(ferrari);
+console.log(honda);
+console.log(toyota);

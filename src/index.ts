@@ -6,6 +6,10 @@ abstract class Person {
     public greeting() {
         console.log(`Hello ${this.name}`);
     }
+
+    public static nameClass() {
+        return "Class name is Person";
+    }
 }
 
 class RegisteredPerson extends Person {
@@ -22,3 +26,4 @@ const person: RegisteredPerson = new RegisteredPerson("John", "john@email.com", 
 );
 
 person.greeting();
+console.log(Person.nameClass());

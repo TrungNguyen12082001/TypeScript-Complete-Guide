@@ -1,35 +1,24 @@
-type User = {
-    name: string;
-};
+abstract class Person {
+    public abstract name: string;
+    public abstract email: string;
+    public abstract phone: number;
 
-type AdminUser = {
-    isAdmin: boolean;
-};
-
-// Intersection Type
-const userAndAdmin: User & AdminUser = {
-    name: "John",
-    isAdmin: true
-};
-
-// Union Type
-const userOrAdmin: User | AdminUser = {
-    name: "Mark"
-};
-
-// Tuples
-type ResponseTuple = [string, number];
-
-interface Name {
-    name: string;
+    public greeting() {
+        console.log(`Hello ${this.name}`);
+    }
 }
 
-interface LastName {
-    lastName: string;
+class RegisteredPerson extends Person {
+    constructor(
+        public name: string,
+        public email: string,
+        public phone: number
+    ) {
+        super();
+    }
 }
 
-class Person implements Name, LastName {
-    constructor(public name: string, public lastName: string) { }
-}
+const person: RegisteredPerson = new RegisteredPerson("John", "john@email.com", 23231321
+);
 
-const person: Person = new Person("John", "Doe");
+person.greeting();
